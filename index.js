@@ -3,6 +3,7 @@ const cors = require('cors')
 
 const app = express()
 require('dotenv').config()
+const port = process.env.PORT || 2555
 
 const db = require('./DL/db')
 db.connect()
@@ -17,4 +18,4 @@ const todoRouter = require('./Router/todo.router')
 app.use('/todo', todoRouter)
 
 
-app.listen(2555,()=>console.log("🪂Server is up"))
+app.listen(port,()=>console.log("🪂Server is up"))
